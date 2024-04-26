@@ -1,0 +1,62 @@
+/*
+Una empresa tiene dos turnos (mañana y tarde) en los que trabajan 8 empleados (4 por la mañana y 4 por la tarde)
+Confeccionar un programa que permita almacenar los sueldos de los empleados agrupados por turno.
+Imprimir los gastos en sueldos de cada turno.
+
+
+*/
+
+#include "iostream"
+using namespace std;
+
+class Sueldos{
+ private:
+        float sueldosManiana[4];
+        float sueldosTarde[4];
+ public:
+        void cargarSueldos();
+        void sumarSueldos();
+        void mostrarSueldos();
+};
+
+void Sueldos::cargarSueldos()
+{
+    
+    for(int i=0;i<4;i++)
+    {
+       cout << "Cargar los sueldos del turno maniana" << endl;
+       cin >>sueldosManiana[i];
+    }
+    for(int f=0;f<4;f++)
+    {
+       cout << "Cargar los sueldos del turno tarde" << endl;
+       cin >>sueldosTarde[f];
+    }
+}
+
+void Sueldos::sumarSueldos()
+{
+    float sumaM,sumaT;
+    sumaM=0;
+    sumaT=0;
+    for(int i=0;i<4;i++)
+    {
+       sumaM=sumaM + sueldosManiana[i];
+       sumaT=sumaT + sueldosTarde[i];
+    }
+    cout << "La suma de los  sueldos del turno maniana es: " << endl;
+    cout << sumaM;
+    cout << "\n";
+    cout << "La suma de los  sueldos del turno tarde es: " << endl;
+    cout << sumaT;
+    cout << "\n";
+}
+
+
+int main()
+{
+    Sueldos sueldos1;
+    sueldos1.cargarSueldos();
+    sueldos1.sumarSueldos();
+    return 0;
+}
